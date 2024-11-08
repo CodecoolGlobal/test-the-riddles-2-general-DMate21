@@ -32,7 +32,7 @@ public class QuizGamePage {
 
         Dotenv dotenv = Dotenv.load();
 
-        String username = dotenv.get("PLAYER_USERNAME");
+        String username = dotenv.get("PLAYER");
         String password = dotenv.get("PLAYER_PASSWORD");
 
         LoginPage loginPage = new LoginPage(driver,wait);

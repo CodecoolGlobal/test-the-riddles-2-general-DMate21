@@ -126,9 +126,9 @@ class QuestionTest {
         quizFormPage.clickOnAnAlreadyExistingQuestion(questionText);
         quizFormComponent.markAnswerAsCorrect(2);
         quizFormComponent.clickSave();
-        quizFormPage.acceptAlert();
-        quizFormPage.clickSaveQuiz();
         quizFormComponent.acceptAlert();
+        quizFormPage.clickSaveQuiz();
+        quizFormPage.acceptAlert();
         assertFalse(driver.getCurrentUrl().contains(BASE_URL+"/quiz/all"));
     }
 

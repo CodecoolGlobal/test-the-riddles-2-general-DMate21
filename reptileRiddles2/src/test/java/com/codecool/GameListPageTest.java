@@ -35,15 +35,14 @@ class GameListPageTest {
 
     @BeforeEach
     public void setUp() throws InterruptedException {
+        databaseMod = new DatabaseMod();
+        databaseMod.PostgresTruncateMultipleTables();
         ChromeOptions options = new ChromeOptions();
         options.setCapability("acceptInsecureCerts", true);
         options.addArguments("--disable-search-engine-choice-screen");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        databaseMod = new DatabaseMod();
-        databaseMod.PostgresTruncateMultipleTables();
         navbarComponent = new NavbarComponent(driver, wait);
         gameListPage = new GameListPage(driver, wait);
 
@@ -67,7 +66,7 @@ class GameListPageTest {
 
     @AfterEach
     void tearDown() {
-        driver.quit();
+//        driver.quit();
         databaseMod.PostgresTruncateMultipleTables();
     }
 

@@ -29,7 +29,6 @@ import java.util.function.BooleanSupplier;
 public class QuizTests {
     private WebDriver driver;
     private WebDriverWait wait;
-    private String quizName;
     private DatabaseMod databaseMod;
     private DBPopulateQuiz dbPopulateQuiz;
     private DBPopulateUser dbPopulateUser;
@@ -50,7 +49,6 @@ public class QuizTests {
         String username = dotenv.get("PLAYER");
         String password = dotenv.get("PLAYER_PASSWORD");
         String email = dotenv.get("PLAYER_EMAIL");
-        quizName = dotenv.get("QUIZ_NAME");
 
         ChromeOptions options = new ChromeOptions();
         options.setCapability("acceptInsecureCerts", true);
@@ -71,6 +69,7 @@ public class QuizTests {
     @AfterEach
     void tearDown() {
         driver.quit();
+        databaseMod.PostgresTruncateMultipleTables();
     }
 
 
@@ -82,6 +81,7 @@ public class QuizTests {
             quizFormPage.setQuizTitle("test");
             quizFormPage.clickAddQuestion();
             quizFormComponent.setQuestionText("Test name");
+            quizFormPage.clickAddQuestion();
             List<String> answers = new ArrayList<>();
             answers.add("hello");
             answers.add("hi");
@@ -90,7 +90,6 @@ public class QuizTests {
             quizFormPage.acceptAlert();
         }
 
-        Thread.sleep(1000);
         Assertions.assertFalse(driver.getCurrentUrl().contains("http://localhost:3000/quiz/all"));
     }
 

@@ -12,7 +12,7 @@ public class QuizFormComponent {
     private WebDriverWait wait;
 
     private final By questionInputLocator = By.id("-1question");
-    private final By timeLimitInputLocator = By.xpath("//*[@id=\"161time\"]");
+    private final By timeLimitInputLocator = By.xpath("//*[@id[contains(., 'time')]]");
     private final By addOptionButtonLocator = By.xpath("//button[contains(text(), '+ Add option')]");
     private final By saveButtonLocator = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[4]/button[1]");
     private final By deleteButtonLocator = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[4]/button[2]");
@@ -31,7 +31,6 @@ public class QuizFormComponent {
         WebElement timeLimitInput = wait.until(ExpectedConditions.elementToBeClickable(timeLimitInputLocator));
         timeLimitInput.clear();
         timeLimitInput.sendKeys(String.valueOf(seconds));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].dispatchEvent(new Event('change'));", timeLimitInput);
     }
 
     public void setAnswerOption(int index, String answer) {
@@ -74,6 +73,7 @@ public class QuizFormComponent {
         }
         markAnswerAsCorrect(correctAnswer);
         clickSave();
+        acceptAlert();
     }
 
     public void acceptAlert(){

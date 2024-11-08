@@ -39,7 +39,7 @@ class RegisterPageTest {
         Dotenv dotenv = Dotenv.configure()
                 .directory("src/main/resources")
                 .load();
-        username = dotenv.get("PLAYER_USERNAME");
+        username = dotenv.get("PLAYER");
         email = dotenv.get("PLAYER_EMAIL");
         password = dotenv.get("PLAYER_PASSWORD");
         BASE_URL = dotenv.get("BASE_URL");
@@ -85,6 +85,7 @@ class RegisterPageTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/credentials.csv", numLinesToSkip = 1)
     public void testCSV(String username, String email, String password, boolean expected){
+        driver.get(BASE_URL+"/register");
         registerPage.register(username, email, password);
         String expectedURL = BASE_URL+"/login";
         boolean actual = driver.getCurrentUrl().contains(expectedURL);
