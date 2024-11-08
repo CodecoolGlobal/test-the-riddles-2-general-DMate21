@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an automated testing setup for **Reptile Riddles 2** - a dynamic web application built for quizzing users. The purpose of this repository is to verify the functionality of the **QuizBlast** application using Selenium WebDriver and JUnit 5. The tests cover various user interactions, such as user registration, quiz creation, answering questions, and viewing results.
+This project is an automated testing setup for **Reptile Riddles 2** - a dynamic web application built for quizzing users. The purpose of this repository is to verify the functionality of the **Quiz** application using Selenium WebDriver and JUnit 5. The tests cover various user interactions, such as user registration, quiz creation, answering questions, and viewing results.
 
 **Reptile Riddles 2** is designed to provide an interactive and fun quiz experience. Users can create quizzes, challenge others, and see results. This application is built with **React** for the frontend and **Java Spring Boot** for the backend, using a **PostgreSQL** database for storage.
 
@@ -36,10 +36,10 @@ To set up and run the project locally, follow these steps:
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/CodecoolGlobal/reptile-riddles-2-general-DMate21.git
+git https://github.com/CodecoolGlobal/test-the-riddles-2-general-DMate21
 ```
 ```bash
-cd reptile-riddles-2-general-DMate21
+cd test-the-riddles-2-general-DMate21
 ```
 
 ### 2. Install Maven dependencies:
