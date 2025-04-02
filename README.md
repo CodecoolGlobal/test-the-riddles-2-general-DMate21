@@ -1,7 +1,10 @@
 # Reptile Riddles 2 - Automated Testing Project
-
-![logo](reptileRiddles2\src\assets\images\logo_big.png)
-
+<br />
+<div align="center">
+<a href="https://github.com/CodecoolGlobal/test-the-riddles-2-general-DMate21">
+<img src="reptileRiddles2/src/assets/images/logo_big.png" alt="Logo" >
+ </a>
+</div>
 
 ## Overview
 
