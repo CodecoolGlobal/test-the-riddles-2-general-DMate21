@@ -1,5 +1,8 @@
 # Reptile Riddles 2 - Automated Testing Project
 
+![logo](reptileRiddles2\src\assets\images\logo_big.png)
+
+
 ## Overview
 
 This project is an automated testing setup for **Reptile Riddles 2** - a dynamic web application built for quizzing users. The purpose of this repository is to verify the functionality of the **Quiz** application using Selenium WebDriver and JUnit 5. The tests cover various user interactions, such as user registration, quiz creation, answering questions, and viewing results.
@@ -33,10 +36,27 @@ The project is configured to run tests against a **dockerized instance** of the 
 
 To set up and run the project locally, follow these steps:
 
+### 1. Clone the SUT repository: 
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/CodecoolGlobal/reptile-riddles-2-general-DMate21
+```
+
+Navigate into the cloned repository:
+
+```bash
+cd reptile-riddles-2-general-DMate21
+```
+
+Follow the installation and setup instructions in the repository's README.md file.
+
+
 ### 1. Clone the repository:
 
 ```bash
-git https://github.com/CodecoolGlobal/test-the-riddles-2-general-DMate21
+git clone https://github.com/CodecoolGlobal/test-the-riddles-2-general-DMate21
 ```
 ```bash
 cd test-the-riddles-2-general-DMate21
